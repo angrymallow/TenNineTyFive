@@ -1,5 +1,5 @@
 body{
-    background-color: #02202a;
+    background-color: #000a0d;
 }
 
 .main-content {
@@ -11,4 +11,5 @@ body{
 }
 .logo {
     height: 12rem;
+    background-color: transparent;
 }
