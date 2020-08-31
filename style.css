@@ -79,9 +79,9 @@ body {
 .message__connect {
   display: flex;
   flex-direction: column;
-  align-content: center;
   flex-wrap: wrap;
-  position: relative; }
+  align-content: center;
+  justify-content: center; }
   .message__connect--action {
     text-align: center;
     width: 11.5rem;

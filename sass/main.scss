@@ -47,7 +47,6 @@ body{
 }
 .logo {
     height: 20rem;
-    
     @include respond(phone) {
         height: 12rem;
     }
@@ -102,9 +101,9 @@ body{
     &__connect {
         display: flex;
         flex-direction: column;
-        align-content: center;
         flex-wrap: wrap;
-        position: relative;
+        align-content: center;
+        justify-content: center;
 
         &--action {
             text-align: center;
