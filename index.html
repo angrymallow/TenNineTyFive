@@ -16,11 +16,40 @@
                     <img class="logo" src="./assets/logo.svg" alt="">
                 </div>
                 <div class="message__container">
-                    <div class="message__quotes">
-                        <span class="message__quote">
-                            “There are a lot of knowledge we can get from reading a book. 
-                            It must not stay on our bookshelves. We must share the knowledge!”
-                        </span>
+                    <div class="message__quotes" id="quotes-container">
+                        <div class="message">
+                            <span class="message__quote">
+                                “There are a lot of knowledge we can get from reading a book. It must not stay on our bookshelves. We must share the knowledge!”
+                            </span>
+                        </div>
+                        <div class="message">
+                            <span class="message__quote">
+                                “A food where you can decide what to put and what's not?”
+                            </span>
+                        </div>
+                        <div class="message">
+                            <span class="message__quote">
+                                “Fastfood shouldn't be your priority when deciding what to eat”
+                            </span>
+                        </div>
+                        <div class="message">
+                            <span class="message__quote">
+                                “Got a talent in cooking? why not share that talent to everyone?”
+                            </span>
+                        </div>
+                        <div class="message">
+                            <span class="message__quote">
+                                “Rent a book? Why not? I got of plenty in my shelves. Trade? Sure.”
+                            </span>
+                        </div>
+                      
+                    </div>
+                    <div class="paging__container">
+                        <span class="dot" onclick="onSelectMessage(1)"></span>
+                        <span class="dot" onclick="onSelectMessage(2)"></span>
+                        <span class="dot" onclick="onSelectMessage(3)"></span>
+                        <span class="dot" onclick="onSelectMessage(4)"></span>
+                        <span class="dot" onclick="onSelectMessage(5)"></span>
                     </div>
                     <div class="message__question">
                         <span class="message__question--text">
@@ -54,5 +83,68 @@
                 </div>
             </div>
         </div>
+        <script>
+            var messageIndex = 1;
+            var interval;
+
+            showMesage(messageIndex);
+            createInterval();
+
+            function onSelectMessage(index) {
+                clearInterval(interval);
+                showMesage(messageIndex = index);
+                createInterval();
+            }
+
+            function showMesage(index) {
+   
+                var myMessages = document.getElementsByClassName("message");
+                var myIndictators = document.getElementsByClassName("dot");
+
+                if (index > myMessages.length) messageIndex = 1;
+
+                if (index < 1) messageIndex = myMessages.length;
+
+                Array.from(myMessages).forEach(message => {
+                    message.style.display = 'none';
+                });
+
+                Array.from(myIndictators).forEach(indicator => {
+                    indicator.className = indicator.className.replace(" active", "");
+                });
+
+                myMessages[messageIndex - 1].style.display = "block";
+                myIndictators[messageIndex - 1].className += " active";
+            }
+
+            function createInterval() {
+                interval = setInterval(() => {
+                    messageIndex ++; 
+                    showMesage(messageIndex);
+                },10000)
+            }
+           
+            // document.querySelector('#quotes-container').innerHTML = 
+            //             `<span class="message__quote">
+            //                 “There are a lot of knowledge we can get from reading a book. It must not stay on our bookshelves. We must share the knowledge!”
+            //             </span>`
+            // const whys = [
+            //     'Why 1 adsadadasd asda da',
+            //     'Why 2db hfghfghfghfghfg',
+            //     'Why 3 dfghwr23452342342',
+            //     'Why 4  dthfghfghfgh fghfghfghfg',
+            //     'Why 54123423 gjkhjkhjkhjkhjkhjkhjk' ,
+            //     'Why 6 qwrasfsdfsdfsdfsd',
+            //     ];
+            //     let index = 0;
+            //     setInterval(() => {
+            //         document.querySelector('#quotes-container').innerHTML = 
+            //             `<span class="message__quote">
+            //                 ${whys[index]}
+            //             </span>`
+            //         index++;
+            //         if (index >= whys.length) index = 0;
+            //     },3000)
+        </script>
     </body>
 </html>

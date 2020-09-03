@@ -37,10 +37,38 @@ body {
       margin-bottom: 3rem; } }
 
 .logo {
-  height: 20rem; }
+  height: 18rem; }
   @media (max-width: 600px) {
     .logo {
       height: 12rem; } }
+
+.paging__container {
+  text-align: center; }
+
+.dot {
+  cursor: pointer;
+  height: 10px;
+  width: 10px;
+  margin: 0 2px;
+  background-color: #F2D5AF;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+  transition: background-color 0.6s ease; }
+  @media (max-width: 600px) {
+    .dot {
+      height: 6px;
+      width: 6px; } }
+
+.dot:hover, .active {
+  background-color: #CE7708; }
+
+.message {
+  text-align: center;
+  margin: 0 auto; }
+  @media (max-width: 600px) {
+    .message {
+      width: 25rem; } }
 
 .message__container {
   margin-bottom: 5rem;
@@ -48,22 +76,29 @@ body {
   flex-direction: column;
   justify-content: center; }
   .message__container > div {
-    margin: 1rem; }
+    margin: 1.1rem; }
   @media (max-width: 600px) {
     .message__container {
-      margin-bottom: 3rem; } }
+      margin-bottom: 1rem; }
+      .message__container > div {
+        margin: .8rem; } }
 
 .message__quotes {
-  text-align: center; }
+  height: 3rem; }
+  @media (max-width: 600px) {
+    .message__quotes {
+      font-size: 2.2rem; } }
 
 .message__quote {
   color: #707070;
+  text-align: center;
   font-size: 1.6rem;
   font-family: "Oxygen";
-  font-weight: 300; }
+  font-weight: 300;
+  animation: slide-up 500ms forwards ease-out; }
   @media (max-width: 600px) {
     .message__quote {
-      font-size: 1.1rem; } }
+      font-size: 1rem; } }
 
 .message__question {
   text-align: center; }
@@ -74,7 +109,7 @@ body {
     color: #CE7708; }
     @media (max-width: 600px) {
       .message__question--text {
-        font-size: 1rem; } }
+        font-size: .9rem; } }
 
 .message__connect {
   display: flex;
@@ -95,7 +130,7 @@ body {
     font-size: 1.6rem; }
     @media (max-width: 600px) {
       .message__connect--action {
-        font-size: 1rem;
+        font-size: .8rem;
         padding: .7rem; } }
   .message__connect--links {
     margin: 1rem;
@@ -146,3 +181,9 @@ body {
 
 .info:not(:last-child) {
   margin-right: 2rem; }
+
+@keyframes slide-up {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
