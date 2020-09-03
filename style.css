@@ -1,6 +1,7 @@
 body {
   background-color: #ffffff;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  height: 100%; }
 
 * {
   font-size: 12px;
@@ -8,29 +9,27 @@ body {
   color: #707070; }
 
 .content {
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%); }
-
-.main-content {
-  position: relative;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
   align-content: center;
-  justify-content: center;
-  max-width: 70rem; }
+  justify-content: center; }
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center; }
   @media (max-width: 600px) {
     .main-content {
       max-width: 50rem; } }
 
 .logo__container {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-content: center;
   margin-bottom: 5rem; }
   @media (max-width: 600px) {
     .logo__container {
@@ -65,7 +64,8 @@ body {
 
 .message {
   text-align: center;
-  margin: 0 auto; }
+  margin: 0 auto;
+  width: 50rem; }
   @media (max-width: 600px) {
     .message {
       width: 25rem; } }
@@ -87,7 +87,7 @@ body {
   height: 3rem; }
   @media (max-width: 600px) {
     .message__quotes {
-      font-size: 2.2rem; } }
+      height: 2.2rem; } }
 
 .message__quote {
   color: #707070;
